@@ -1,6 +1,6 @@
 # wp-cli-media-restore
 
-[![Build Status](https://travis-ci.org/frozzare/wp-cli-download-attachments.svg)](https://travis-ci.org/frozzare/wp-cli-download-attachments)
+[![Build Status](https://travis-ci.org/frozzare/wp-cli-media-restore.svg)](https://travis-ci.org/frozzare/wp-cli-media-restore)
 
 > WIP
 
