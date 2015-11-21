@@ -6,9 +6,9 @@ if ( ! defined( 'WP_CLI' ) ) {
 }
 
 /**
- * Download Attachments command for WP CLI.
+ * Media Restore command for WP CLI.
  */
-class Download_Attachments_Command extends WP_CLI_Command {
+class Media_Restore_Command extends WP_CLI_Command {
 
     /**
      * The default options for this command.
@@ -16,8 +16,8 @@ class Download_Attachments_Command extends WP_CLI_Command {
      * @var array
      */
     private $default_assoc_args = [
-        'generate_thumbs' => false,
-        'uploads_url'     => ''
+        'generate'    => false,
+        'uploads_url' => ''
     ];
 
     /**
@@ -30,31 +30,32 @@ class Download_Attachments_Command extends WP_CLI_Command {
     private function get_config_value( $key ) {
         $config = WP_CLI::get_configurator()->to_array();
 
-        if ( count( $config ) === 1 || ! isset( $config[1]['download_attachments'] ) ) {
+        if ( count( $config ) === 1 || ! isset( $config[1]['media'] ) ) {
             return;
         }
 
-        if ( ! isset( $config[1]['download_attachments'][$key] ) ) {
+        if ( ! isset( $config[1]['media']['restore'] ) || ! isset( $config[1]['media']['restore'][$key] ) ) {
             return;
         }
 
-        return $config[1]['download_attachments'][$key];
+        return $config[1]['media']['restore'][$key];
     }
 
     /**
-     * Download attachments with WP CLI.
+     * Restore media attachments with WP CLI.
      *
      * ### Config
      *
      * Example of `~/.wp-cli/config.yml`:
      *
-     *     download_attachments:
-     *       generate_thumbs: false
+     *     media:
+     *     	restore:
+     *       generate: false
      *       url: http://www.bedrock.com/app/uploads/
      *
      * ### Options
      *
-     * #### `[--generate_thumbs=false]`
+     * #### `[--generate=false]`
      * Set this optional parameter if you want to (re)generate all the different image sizes. Defaults to not generating thumbnails.
      *
      * #### `--url`
@@ -62,12 +63,12 @@ class Download_Attachments_Command extends WP_CLI_Command {
      *
      * ### Examples
      *
-     *     wp download-attachments run --url=http://www.bedrock.com/app/uploads/
+     *     wp media restore --uploads_url=http://www.bedrock.com/app/uploads/
      *
      * @param array $args
      * @param array $assoc_args
      */
-    public function run( array $args = [], array $assoc_args = [] ) {
+    public function __invoke( array $args = [], array $assoc_args = [] ) {
         require_once ABSPATH . 'wp-admin/includes/media.php';
         require_once ABSPATH . 'wp-admin/includes/file.php';
         require_once ABSPATH . 'wp-admin/includes/image.php';
@@ -76,9 +77,9 @@ class Download_Attachments_Command extends WP_CLI_Command {
         $assoc_args = array_merge( $this->default_assoc_args, $assoc_args );
 
         // Get generate thumbnails value from WP CLI config or cmd argument.
-        $generate_thumbs = $this->get_config_value( 'generate_thumbs' ) !== null
-            ? $this->get_config_value( 'generate_thumbs' )
-            : $assoc_args['generate_thumbs'];
+        $generate = $this->get_config_value( 'generate' ) !== null
+            ? $this->get_config_value( 'generate' )
+            : $assoc_args['generate'];
 
         // Get url base value from WP CLI config or cmd argument.
         $url_base = $this->get_config_value( 'uploads_url' ) !== null
@@ -174,7 +175,7 @@ class Download_Attachments_Command extends WP_CLI_Command {
                 }
 
                 // Generate thumbs if enabled and the attachment is a image.
-                if ( $generate_thumbs && $attachment && 'attachment' === $attachment->post_type && 'image/' === substr( $attachment->post_type, 0, 6 ) ) {
+                if ( $generate && $attachment && 'attachment' === $attachment->post_type && 'image/' === substr( $attachment->post_type, 0, 6 ) ) {
                     @set_time_limit( 900 );
                     update_post_meta( $id, '_wp_attachment_metadata', wp_generate_attachment_metadata( $id, $local_path ) );
 
@@ -225,4 +226,4 @@ class Download_Attachments_Command extends WP_CLI_Command {
 
 }
 
-\WP_CLI::add_command( 'download-attachments', 'Download_Attachments_Command' );
+\WP_CLI::add_command( 'media restore', 'Media_Restore_Command' );
