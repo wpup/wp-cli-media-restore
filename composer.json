@@ -1,9 +1,9 @@
 {
-  "name": "frozzare/wp-cli-download-attachments",
-  "description": "WP-CLI command for downloading attachments",
+  "name": "frozzare/wp-cli-media-restore",
+  "description": "WP-CLI command for restoring attachments",
   "type": "command",
   "keywords": ["attachments", "wp-cli", "wordpress"],
-  "homepage": "https://github.com/frozzare/wp-cli-download-attachments",
+  "homepage": "https://github.com/frozzare/wp-cli-media-restore",
   "license": "MIT",
   "authors": [
     {
