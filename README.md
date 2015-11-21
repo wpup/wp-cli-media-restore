@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/frozzare/wp-cli-media-restore.svg)](https://travis-ci.org/frozzare/wp-cli-media-restore)
 
-Restore media attachments using WP CLI.
+Restore media attachments using WP CLI. Works with custom content directories.
 
 ## Installation
 
