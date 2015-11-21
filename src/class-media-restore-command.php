@@ -51,14 +51,14 @@ class Media_Restore_Command extends WP_CLI_Command {
 	 *     media:
 	 *     	restore:
 	 *       generate: false
-	 *       url: http://www.bedrock.com/app/uploads/
+	 *       uploads_url: http://www.bedrock.com/app/uploads/
 	 *
 	 * ### Options
 	 *
 	 * #### `[--generate=false]`
 	 * Set this optional parameter if you want to (re)generate all the different image sizes. Defaults to not generating thumbnails.
 	 *
-	 * #### `--url`
+	 * #### `--uploads-url`
 	 * The URL to the uploads directory, not including any date based folder structure.
 	 *
 	 * ### Examples
@@ -87,7 +87,7 @@ class Media_Restore_Command extends WP_CLI_Command {
 		// Get url base value from WP CLI config or cmd argument.
 		$url_base = $this->get_config_value( 'uploads_url' ) !== null
 			? $this->get_config_value( 'uploads_url' )
-			: $assoc_args['uploads_url'];
+			: $assoc_args['uploads-url'];
 
 		// Don't continue without a url.
 		if ( empty( $url_base ) ) {
