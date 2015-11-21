@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/frozzare/wp-cli-media-restore.svg)](https://travis-ci.org/frozzare/wp-cli-media-restore)
 
-Restore media attachments using WP CLI. Based on [download missing attachments](https://github.com/cftp/wp-cli-download-missing-attachments) with support for custom content directories and configuration in WP CLI config file.
+Restore media attachments using WP CLI. Based on [download missing attachments](https://github.com/cftp/wp-cli-download-missing-attachments) with support for custom content directory and configuration in WP CLI config file.
 
 ## Installation
 
