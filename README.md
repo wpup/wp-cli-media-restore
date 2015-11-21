@@ -28,7 +28,7 @@ media:
 #### `[--generate=false]`
 Set this optional parameter if you want to (re)generate all the different image sizes. Defaults to not generating thumbnails.
 
-#### `[--url]`
+#### `--url`
 The URL to the uploads directory, not including any date based folder structure.
 
 ## Examples
