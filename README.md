@@ -34,7 +34,7 @@ The URL to the uploads directory, not including any date based folder structure.
 ## Examples
 
 ```
-wp media restore --uploads_url=http://www.bedrock.com/app/uploads/
+wp media restore --uploads-url=http://www.bedrock.com/app/uploads/
 ```
 
 # License
