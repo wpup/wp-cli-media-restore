@@ -26,7 +26,7 @@ Example of `~/.wp-cli/config.yml`:
 media:
 	restore:
 		generate: false
-  	uploads_url: http://www.bedrock.com/app/uploads/
+		uploads_url: http://www.bedrock.com/app/uploads/
 ```
 
 ## Options
