@@ -80,6 +80,9 @@ class Media_Restore_Command extends WP_CLI_Command {
         $generate = $this->get_config_value( 'generate' ) !== null
             ? $this->get_config_value( 'generate' )
             : $assoc_args['generate'];
+        $generate = is_string( $generate )
+            ? $generate === 'true'
+            : (bool) $generate;
 
         // Get url base value from WP CLI config or cmd argument.
         $url_base = $this->get_config_value( 'uploads_url' ) !== null
@@ -91,6 +94,7 @@ class Media_Restore_Command extends WP_CLI_Command {
             WP_CLI::error( 'Missing url' );
         }
 
+        $warnings        = [];
         $attachments     = $this->get_attachments();
         $content_dir     = CONTENT_DIR;
         $url_base        = trailingslashit( $url_base );
@@ -105,7 +109,7 @@ class Media_Restore_Command extends WP_CLI_Command {
         ];
 
         // Output information about what the CLI command is doing.
-        WP_CLI::line( sprintf( 'Downloading %d attachments.', $results['attachments'] ) );
+        WP_CLI::line( sprintf( 'Downloading %d attachments%s', $results['attachments'], $generate ? ' and generating thumbnails.' : '.' ) );
 
         // Create a progress bar.
         $progress = new \cli\progress\Bar( 'Progress',  $results[ 'attachments' ] );
@@ -174,10 +178,11 @@ class Media_Restore_Command extends WP_CLI_Command {
                     continue;
                 }
 
-                // Generate thumbs if enabled and the attachment is a image.
-                if ( $generate && $attachment && 'attachment' === $attachment->post_type && 'image/' === substr( $attachment->post_type, 0, 6 ) ) {
+                // Generate thumbnails if enabled and the attachment is a image.
+                if ( $generate && $attachment && 'attachment' === $attachment->post_type && strpos( $attachment->post_mime_type, 'image/' ) !== false ) {
                     @set_time_limit( 900 );
-                    update_post_meta( $id, '_wp_attachment_metadata', wp_generate_attachment_metadata( $id, $local_path ) );
+                    $metadata = wp_generate_attachment_metadata( $id, $local_path );
+                    update_post_meta( $id, '_wp_attachment_metadata', $metadata );
 
                     if ( is_wp_error( $metadata ) ) {
                         $warnings[] = sprintf( 'Error generating image thumbnails for attachment ID %d: %s', $id, $metadata->get_error_message() );
