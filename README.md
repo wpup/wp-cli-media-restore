@@ -18,14 +18,6 @@ require:
 
 For other methods, please refer to WP-CLI's [Community Packages](https://github.com/wp-cli/wp-cli/wiki/Community-Packages) wiki.
 
-## Usage
-
-Example:
-
-```
-wp download-attachments download --url=http://www.bedrock.com/app/uploads/
-```
-
 ### Config
 
 You can add the path to the `phpcs` bin to use in WP CLI's config file and/or the standard that should be used.
