@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/frozzare/wp-cli-media-restore.svg)](https://travis-ci.org/frozzare/wp-cli-media-restore)
 
-> WIP
-
 Restore media attachments using WP CLI.
 
 ## Installation
