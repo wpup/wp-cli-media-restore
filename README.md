@@ -1,6 +1,8 @@
 # wp-cli-download-attachments
 
-[![Build Status](https://travis-ci.org/frozzare/wp-cli-lint.svg)](https://travis-ci.org/frozzare/wp-cli-lint)
+[![Build Status](https://travis-ci.org/frozzare/wp-cli-download-attachments.svg)](https://travis-ci.org/frozzare/wp-cli-download-attachments)
+
+> WIP
 
 Download attachments using WP CLI.
 
