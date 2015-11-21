@@ -18,7 +18,7 @@ require:
 
 For other methods, please refer to WP-CLI's [Community Packages](https://github.com/wp-cli/wp-cli/wiki/Community-Packages) wiki.
 
-### Config
+## Config
 
 You can add the path to the `phpcs` bin to use in WP CLI's config file and/or the standard that should be used.
 
@@ -29,7 +29,7 @@ download_attachments:
   url: http://www.bedrock.com/app/uploads/
 ```
 
-### Options
+## Options
 
 #### `[--generate_thumbs=false]`
 Set this optional parameter if you want to (re)generate all the different image sizes. Defaults to not generating thumbnails.
@@ -37,7 +37,7 @@ Set this optional parameter if you want to (re)generate all the different image 
 #### `[--url]`
 The URL to the uploads directory, not including any date based folder structure.
 
-### Examples
+## Examples
 
 ```
 wp download-attachments --url=http://www.bedrock.com/app/uploads/
