@@ -16,11 +16,4 @@
     <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
     <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword" />
   </rule>
-
-  <rule ref="Generic.WhiteSpace.ScopeIndent">
-    <properties>
-      <property name="indent" value="4"/>
-      <property name="tabIndent" value="false"/>
-    </properties>
-  </rule>
 </ruleset>
