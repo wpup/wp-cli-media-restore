@@ -1,0 +1,21 @@
+{
+  "name": "frozzare/wp-cli-download-attachments",
+  "description": "WP-CLI command for downloading attachments",
+  "type": "command",
+  "keywords": ["attachments", "wp-cli", "wordpress"],
+  "homepage": "https://github.com/frozzare/wp-cli-download-attachments",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fredrik Forsmo",
+      "email": "fredrik.forsmo@gmail.com",
+      "homepage": "https://github.com/frozzare"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "files": ["src/class-download-attachments-command.php"]
+  }
+}
