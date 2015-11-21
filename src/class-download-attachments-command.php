@@ -62,12 +62,12 @@ class Download_Attachments_Command extends WP_CLI_Command {
      *
      * ### Examples
      *
-     *     wp download-attachments download --url=http://www.bedrock.com/app/uploads/
+     *     wp download-attachments run --url=http://www.bedrock.com/app/uploads/
      *
      * @param array $args
      * @param array $assoc_args
      */
-    public function get( array $args = [], array $assoc_args = [] ) {
+    public function run( array $args = [], array $assoc_args = [] ) {
         require_once ABSPATH . 'wp-admin/includes/media.php';
         require_once ABSPATH . 'wp-admin/includes/file.php';
         require_once ABSPATH . 'wp-admin/includes/image.php';

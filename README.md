@@ -40,5 +40,5 @@ The URL to the uploads directory, not including any date based folder structure.
 ## Examples
 
 ```
-wp download-attachments download --url=http://www.bedrock.com/app/uploads/
+wp download-attachments run --url=http://www.bedrock.com/app/uploads/
 ```
