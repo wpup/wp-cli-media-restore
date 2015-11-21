@@ -23,8 +23,7 @@ For other methods, please refer to WP-CLI's [Community Packages](https://github.
 Example:
 
 ```
-wp lint
-wp lint path/to/code
+wp download-attachments download --url=http://www.bedrock.com/app/uploads/
 ```
 
 ### Config
