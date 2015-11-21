@@ -16,6 +16,6 @@
     "php": ">=5.4"
   },
   "autoload": {
-    "files": ["src/class-download-attachments-command.php"]
+    "files": ["src/class-media-restore-command.php"]
   }
 }
