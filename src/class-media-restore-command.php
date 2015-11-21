@@ -230,4 +230,4 @@ class Media_Restore_Command extends WP_CLI_Command {
 	}
 }
 
-\WP_CLI::add_command( 'media restore', 'Media_Restore_Command' );
+WP_CLI::add_command( 'media restore', 'Media_Restore_Command' );
