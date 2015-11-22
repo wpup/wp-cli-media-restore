@@ -58,7 +58,7 @@ class Media_Restore_Command extends WP_CLI_Command {
 	 * #### `[--generate=false]`
 	 * Set this optional parameter if you want to (re)generate all the different image sizes. Defaults to not generating thumbnails.
 	 *
-	 * #### `--uploads-url`
+	 * #### `[--uploads-url]`
 	 * The URL to the uploads directory, not including any date based folder structure.
 	 *
 	 * ### Examples
