@@ -77,7 +77,7 @@ class Media_Restore_Command extends WP_CLI_Command {
 		$assoc_args = array_merge( $this->default_assoc_args, $assoc_args );
 
 		// Get generate thumbnails value from WP CLI config or cmd argument.
-		$generate = $this->get_config_value( 'generate' ) !== null
+		$generate = $assoc_args['generate'] === false
 			? $this->get_config_value( 'generate' )
 			: $assoc_args['generate'];
 		$generate = is_string( $generate )
@@ -85,7 +85,7 @@ class Media_Restore_Command extends WP_CLI_Command {
 			: (bool) $generate;
 
 		// Get url base value from WP CLI config or cmd argument.
-		$url_base = $this->get_config_value( 'uploads_url' ) !== null
+		$url_base = empty( $assoc_args['uploads-url'] )
 			? $this->get_config_value( 'uploads_url' )
 			: $assoc_args['uploads-url'];
 
