@@ -6,6 +6,14 @@ Restore media attachments using WP CLI. Based on [download missing attachments](
 
 ## Installation
 
+If you're using WP-CLI v0.23.0 or later, you can install this package with:
+
+```
+wp package install frozzare/wp-cli-media-restore
+```
+
+Or, using Composer directly:
+
 ```
 composer require frozzare/wp-cli-media-restore
 ```
