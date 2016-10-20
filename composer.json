@@ -1,7 +1,7 @@
 {
   "name": "frozzare/wp-cli-media-restore",
   "description": "Restore media attachments using WP CLI",
-  "type": "command",
+  "type": "wp-cli-package",
   "keywords": ["attachments", "wp-cli", "wordpress"],
   "homepage": "https://github.com/frozzare/wp-cli-media-restore",
   "license": "MIT",
