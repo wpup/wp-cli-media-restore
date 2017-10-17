@@ -1,7 +1,5 @@
 # wp-cli-media-restore
 
-[![Build Status](https://travis-ci.org/frozzare/wp-cli-media-restore.svg)](https://travis-ci.org/frozzare/wp-cli-media-restore)
-
 Restore media attachments using WP CLI. Based on [download missing attachments](https://github.com/cftp/wp-cli-download-missing-attachments) with support for custom content directory and configuration in WP CLI config file.
 
 ## Installation
@@ -26,9 +24,9 @@ Example of `~/.wp-cli/config.yml`:
 
 ```yaml
 media:
-	restore:
-		generate: false
-		uploads_url: http://www.bedrock.com/app/uploads/
+  restore:
+    generate: false
+    uploads_url: http://www.bedrock.com/app/uploads/
 ```
 
 ## Options
@@ -45,6 +43,6 @@ The URL to the uploads directory, not including any date based folder structure.
 wp media restore --uploads-url=http://www.bedrock.com/app/uploads/
 ```
 
-# License
+## License
 
 MIT © [Fredrik Forsmo](https://github.com/frozzare)
