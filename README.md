@@ -1,5 +1,7 @@
 # wp-cli-media-restore
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Restore media attachments using WP CLI. Based on [download missing attachments](https://github.com/cftp/wp-cli-download-missing-attachments) with support for custom content directory and configuration in WP CLI config file.
 
 ## Installation
